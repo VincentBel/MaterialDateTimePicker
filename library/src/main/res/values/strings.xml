@@ -18,6 +18,7 @@
 
     <!-- Label for button to confirm chosen date or time [CHAR LIMIT=30] -->
     <string name="mdtp_done_label">Done</string>
+    <string name="mdtp_up_to_now">up to now</string>
     <string name="mdtp_ok">@android:string/ok</string>
     <string name="mdtp_cancel">@android:string/cancel</string>
     <!--

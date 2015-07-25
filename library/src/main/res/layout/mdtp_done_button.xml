@@ -13,31 +13,46 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/done_background"
     android:layout_width="match_parent"
     android:layout_height="56dp"
     android:orientation="horizontal"
     android:background="@android:color/transparent"
-    android:gravity="end|right"
     android:layout_gravity="center_vertical"
     android:paddingBottom="8dp">
+
+    <Button
+        android:id="@+id/up_to_now"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_centerVertical="true"
+        style="@style/mdtp_ActionButton.Text"
+        android:text="@string/mdtp_up_to_now" />
 
     <Button
         android:id="@+id/cancel"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        style="@style/mdtp_ActionButton.Text"
+        android:text="@string/mdtp_cancel"
+        android:layout_centerVertical="true"
         android:layout_marginRight="8dp"
         android:layout_marginEnd="8dp"
-        style="@style/mdtp_ActionButton.Text"
-        android:text="@string/mdtp_cancel" />
+        android:layout_toLeftOf="@+id/ok"
+        android:layout_toStartOf="@+id/ok" />
 
     <Button
         android:id="@+id/ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp"
         style="@style/mdtp_ActionButton.Text"
-        android:text="@string/mdtp_ok" />
-</LinearLayout>
+        android:text="@string/mdtp_ok"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

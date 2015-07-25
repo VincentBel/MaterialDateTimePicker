@@ -136,6 +136,8 @@ public class DatePickerDialog extends DialogFragment implements
          * @param dayOfMonth The day of the month that was set.
          */
         void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth);
+
+        void onDateSetToUpToNow();
     }
 
     /**
@@ -273,6 +275,18 @@ public class DatePickerDialog extends DialogFragment implements
         Animation animation2 = new AlphaAnimation(1.0f, 0.0f);
         animation2.setDuration(ANIMATION_DURATION);
         mAnimator.setOutAnimation(animation2);
+
+        Button upToNowButton = (Button) view.findViewById(R.id.up_to_now);
+        upToNowButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tryVibrate();
+                if (mCallBack != null) {
+                    mCallBack.onDateSetToUpToNow();
+                }
+                dismiss();
+            }
+        });
 
         Button okButton = (Button) view.findViewById(R.id.ok);
         okButton.setOnClickListener(new OnClickListener() {

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
@@ -121,5 +122,10 @@ public class MainActivity extends ActionBarActivity implements
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
         String date = "You picked the following date: "+dayOfMonth+"/"+(++monthOfYear)+"/"+year;
         dateTextView.setText(date);
+    }
+
+    @Override
+    public void onDateSetToUpToNow() {
+        Toast.makeText(this, "up to now", Toast.LENGTH_SHORT).show();
     }
 }
